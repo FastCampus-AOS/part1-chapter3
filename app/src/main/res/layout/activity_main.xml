@@ -26,6 +26,7 @@
         android:text="박현수"
         android:ellipsize="end"
         style="@style/Value"
+        android:layout_marginEnd="36dp"
         app:layout_constraintBaseline_toBaselineOf="@id/nameTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -72,7 +73,7 @@
         style="@style/Value"
         app:layout_constraintBaseline_toBaselineOf="@id/bloodTypeTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
 
     <!-- 비상연락처 -->
 
@@ -95,7 +96,7 @@
         style="@style/Value"
         app:layout_constraintBaseline_toBaselineOf="@id/firstResponderTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
 
     <!-- 주의사항 -->
 
@@ -118,7 +119,7 @@
         style="@style/Value"
         app:layout_constraintBaseline_toBaselineOf="@id/cautionTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
 
     <!-- 가이드라인  -->
     <androidx.constraintlayout.widget.Guideline
