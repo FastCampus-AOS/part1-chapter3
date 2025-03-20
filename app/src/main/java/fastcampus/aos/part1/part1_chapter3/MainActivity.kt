@@ -2,6 +2,7 @@ package fastcampus.aos.part1.part1_chapter3
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, EditActivity::class.java)
             startActivity(intent)
         }
+
+        binding.deleteButton.setOnClickListener {
+            deleteData()
+        }
     }
 
     override fun onResume() {
@@ -41,5 +46,14 @@ class MainActivity : AppCompatActivity() {
             binding.cautionTextView.isVisible = caution.isNullOrEmpty().not()
             binding.cautionValueTextView.text = if (caution.isNullOrEmpty().not()) caution else ""
         }
+    }
+
+    private fun deleteData() {
+        with(getSharedPreferences(USER_INFORMATION, MODE_PRIVATE).edit()) {
+            clear()
+            apply()
+            getDataUiUpdate()
+        }
+        Toast.makeText(this@MainActivity, "초기화를 완료했습니다.", Toast.LENGTH_SHORT).show()
     }
 }
