@@ -1,6 +1,7 @@
 package fastcampus.aos.part1.part1_chapter3
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import fastcampus.aos.part1.part1_chapter3.databinding.ActivityMainBinding
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.deleteButton.setOnClickListener {
             deleteData()
+        }
+
+        binding.firstResponderLayer.setOnClickListener {
+            with(Intent(Intent.ACTION_DIAL)) {
+                val phoneNumber = binding.firstResponderValueTextView.text.toString().replace("-", "")
+                data = "tel:$phoneNumber".toUri()
+                startActivity(this)
+            }
         }
     }
 
