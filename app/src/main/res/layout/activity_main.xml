@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 이름 -->
+
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
@@ -24,11 +26,11 @@
         android:text="박현수"
         android:ellipsize="end"
         style="@style/Value"
-        android:gravity="end"
-        android:layout_marginEnd="36dp"
         app:layout_constraintBaseline_toBaselineOf="@id/nameTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 생년월일 -->
 
     <TextView
         android:id="@+id/birthdateTextView"
@@ -41,18 +43,101 @@
 
     <TextView
         android:id="@+id/birthdateValueTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="0000-00-00"
         style="@style/Value"
         app:layout_constraintBaseline_toBaselineOf="@id/birthdateTextView"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
-    
+
+    <!-- 혈액형 -->
+
+    <TextView
+        android:id="@+id/bloodTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="혈액형"
+        style="@style/Title"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/birthdateTextView" />
+
+    <TextView
+        android:id="@+id/bloodTypeValueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:ellipsize="end"
+        style="@style/Value"
+        app:layout_constraintBaseline_toBaselineOf="@id/bloodTypeTextView"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 비상연락처 -->
+
+    <TextView
+        android:id="@+id/firstResponderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비상 연락처"
+        style="@style/Title"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bloodTypeTextView" />
+
+    <TextView
+        android:id="@+id/firstResponderValueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="000-0000-0000"
+        android:ellipsize="end"
+        style="@style/Value"
+        app:layout_constraintBaseline_toBaselineOf="@id/firstResponderTextView"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 주의사항 -->
+
+    <TextView
+        android:id="@+id/cautionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        style="@style/Title"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstResponderTextView" />
+
+    <TextView
+        android:id="@+id/cautionValueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        android:ellipsize="end"
+        style="@style/Value"
+        app:layout_constraintBaseline_toBaselineOf="@id/cautionTextView"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 가이드라인  -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.4" />
+
+    <!-- 플로팅 버튼 -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goInputActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/baseline_edit_24"
+        android:layout_margin="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
